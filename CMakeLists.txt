@@ -6,4 +6,6 @@ set(CMAKE_CXX_STANDARD 14)
 add_executable(Collection_Tracker
         main.cpp
         item.h
-        item.cpp)
+        item.cpp
+        collection.h
+        collection.cpp)

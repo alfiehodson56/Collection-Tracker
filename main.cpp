@@ -1,4 +1,10 @@
 #include <iostream>
+#include <string>
+#include <vector>
+
+#include "item.h"
+#include "collection.h"
+#include "user.h"
 
 using namespace std;
 

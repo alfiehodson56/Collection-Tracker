@@ -1,6 +1,8 @@
 #pragma once
+
 #include <string>
 #include <vector>
+
 #include "item.h"
 
 class Collection {
@@ -14,10 +16,9 @@ class Collection {
 
     std::string getName();
     std::string getType();
-
-    void displayItems();
     int getItemCount();
 
+    void displayItems();
     void addItem(Item item);
     void removeItem(std::string itemName);
 };

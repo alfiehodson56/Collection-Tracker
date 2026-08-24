@@ -8,4 +8,6 @@ add_executable(Collection_Tracker
         item.h
         item.cpp
         collection.h
-        collection.cpp)
+        collection.cpp
+        user.h
+        user.cpp)

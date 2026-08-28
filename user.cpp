@@ -32,7 +32,7 @@ int User::getCollectionCount() {
 
 void User::displayCollections() {
     for (int i = 0; i < collections.size(); i++) {
-        cout << collections[i].getName() << endl;
+        cout << i + 1 << ". " << collections[i].getName() << endl;
     }
 }
 

@@ -51,7 +51,30 @@ int main() {
 }
 
 void loginMenu(vector<User>& users) {
+    string username;
+    string password;
 
+    cout << "Login Selected! \n";
+
+    while (true) {
+        cout << "Enter your username \n";
+        cin >> username;
+
+        cout << "Enter your password \n";
+        cin >> password;
+
+
+        for (User& user : users) {
+            if (user.getName() == username && user.getPassword() == password) {
+
+                cout << "Login successful \n";
+                mainMenu(user);
+                return;
+            }
+        }
+
+        cout << "Invalid username or password. Please try again. \n";
+    }
 }
 
 void registerMenu(vector<User>& users) {
@@ -76,6 +99,7 @@ void registerMenu(vector<User>& users) {
             continue;
         }
 
+        cout << "Registration successful \n";
         break;
     }
 

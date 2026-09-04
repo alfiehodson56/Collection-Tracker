@@ -11,6 +11,8 @@ using namespace std;
 void loginMenu(vector<User>& users);
 void registerMenu(vector<User>& users);
 void mainMenu(User& user);
+void viewCollection(User& user);
+void createCollection(User& user);
 
 int main() {
     vector<User> users;
@@ -107,6 +109,14 @@ void registerMenu(vector<User>& users) {
     users.push_back(user);
 }
 
+void viewCollection(User& user) {
+
+}
+
+void createCollection(User& user) {
+
+}
+
 void mainMenu(User& user) {
     int option;
 
@@ -127,12 +137,12 @@ void mainMenu(User& user) {
         switch (option) {
             case 1:
                 cout << "View collection selected! \n";
-                cout << "What collection would you like to view? \n";
-
+                viewCollection(user);
                 break;
 
             case 2:
                 cout << "Create new collection selected! \n";
+                createCollection(user);
                 break;
 
             case 3:

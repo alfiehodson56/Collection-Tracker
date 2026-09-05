@@ -20,6 +20,7 @@ public:
     std::string getName();
     std::string getPassword();
     int getCollectionCount();
+    Collection getCollection(int number);
 
     void displayCollections();
     void addCollection(Collection collection);

@@ -12,7 +12,9 @@ void loginMenu(vector<User>& users);
 void registerMenu(vector<User>& users);
 void mainMenu(User& user);
 void viewCollection(User& user);
+void collectionMenu(Collection collection);
 void createCollection(User& user);
+void deleteCollection(User& user);
 
 int main() {
     vector<User> users;
@@ -110,10 +112,66 @@ void registerMenu(vector<User>& users) {
 }
 
 void viewCollection(User& user) {
+    int option;
 
+    cout << "View Collections! \n";
+    user.displayCollections();
+
+    while (true) {
+        cout << "To select a collection enter its assigned number \n";
+        cin >> option;
+
+        if (cin.fail()) {
+            cout << "Invalid input. Please try again.\n";
+            cin.clear();
+            cin.ignore(1000, '\n');
+            continue;
+        }
+
+        break;
+    }
+
+    Collection collection = user.getCollection(option);
+    collectionMenu(collection);
+}
+
+void collectionMenu(Collection collection) {
+    int option;
+
+    while (true) {
+        cout << collection.getName() << " Collection Selected! \n";
+        cout << "To view items enter 1 \n";
+        cout << "To add item enter 2 \n";
+        cout << "To delete item enter 3 \n";
+        cout << "To go back enter 4 \n";
+        cin >> option;
+
+        if (cin.fail()) {
+            cout << "Invalid input. Please try again.\n";
+            cin.clear();
+            cin.ignore(1000, '\n');
+            continue;
+        }
+    }
 }
 
 void createCollection(User& user) {
+    string name;
+    string type;
+
+    cout << "Create Collection! \n";
+
+    cout << "Enter a collection name \n";
+    cin >> name;
+
+    cout << "Enter a collection type \n";
+    cin >> type;
+
+    Collection collection(user.getCollectionCount(), name, type);
+    user.addCollection(collection);
+}
+
+void deleteCollection(User& user) {
 
 }
 
@@ -122,9 +180,10 @@ void mainMenu(User& user) {
 
     while (true) {
         cout << "Collection Tracker Program! \n";
-        cout << "To view a collection enter 1 \n";
+        cout << "To view collections enter 1 \n";
         cout << "To create a collection enter 2 \n";
-        cout << "To logout enter 3 \n";
+        cout << "To delete a collection enter 3 \n";
+        cout << "To logout enter 4 \n";
         cin >> option;
 
         if (cin.fail()) {
@@ -136,7 +195,7 @@ void mainMenu(User& user) {
 
         switch (option) {
             case 1:
-                cout << "View collection selected! \n";
+                cout << "View collections selected! \n";
                 viewCollection(user);
                 break;
 
@@ -146,6 +205,11 @@ void mainMenu(User& user) {
                 break;
 
             case 3:
+                cout << "Delete collection selected! \n";
+                deleteCollection(user);
+                break;
+
+            case 4:
                 cout << "Logout selected! \n";
                 return;
 

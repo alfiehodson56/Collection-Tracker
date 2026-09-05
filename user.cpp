@@ -30,9 +30,15 @@ int User::getCollectionCount() {
     return collections.size();
 }
 
+Collection User::getCollection(int number) {
+    return collections[number];
+}
+
 void User::displayCollections() {
     for (int i = 0; i < collections.size(); i++) {
-        cout << i + 1 << ". " << collections[i].getName() << endl;
+        cout << i
+        << ". Name: " << collections[i].getName()
+        << ". Type: " << collections[i].getType() << endl;
     }
 }
 

@@ -5,9 +5,14 @@
 
 using namespace std;
 
-Collection::Collection(std::string name, std::string type) :
+Collection::Collection(int number, std::string name, std::string type) :
+number(number),
 name(name),
 type(type) {}
+
+int Collection::getNumber() {
+    return number;
+}
 
 string Collection::getName() {
     return name;

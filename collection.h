@@ -7,13 +7,15 @@
 
 class Collection {
     private:
+    int number;
     std::string name;
     std::string type;
     std::vector<Item> items;
 
     public:
-    Collection (std::string name, std::string type);
+    Collection (int number, std::string name, std::string type);
 
+    int getNumber();
     std::string getName();
     std::string getType();
     int getItemCount();
